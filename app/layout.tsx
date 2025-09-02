@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://example.com"),
   openGraph: {
     title: "Balaji Boundary Walls",
-    description: "Turnkey RCC & precast boundary wall solutions. Pan-city service. 1,00,000+ sq ft installed.",
+    description: "1,00,000 + sq ft.",
     url: "https://example.com",
     siteName: "Balaji Boundary Walls",
     images: [
