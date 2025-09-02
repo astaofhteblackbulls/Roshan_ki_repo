@@ -1,22 +1,27 @@
 "use client"
 
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
-
-const nav = [
-  { href: "/", label: "Home" },
-  { href: "/products", label: "Products" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/about", label: "About" },
-  { href: "/faqs", label: "FAQs" },
-  { href: "/contact", label: "Contact" },
-  { href: "/admin", label: "Admin" },
-]
+import { useEffect } from 'react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { useTranslation } from 'react-i18next'
+import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
+import '@/lib/i18n'
 
 export function SiteHeader() {
   const pathname = usePathname()
+  const { t } = useTranslation()
+
+  const nav = [
+    { href: '/', label: t('home') },
+    { href: '/products', label: t('products') },
+    { href: '/gallery', label: t('gallery') },
+    { href: '/about', label: t('about') },
+    { href: '/faqs', label: t('faqs') },
+    { href: '/contact', label: t('contact') },
+    { href: '/admin', label: t('admin') },
+  ]
+
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
@@ -30,8 +35,8 @@ export function SiteHeader() {
               key={item.href}
               href={item.href}
               className={cn(
-                "rounded-md px-3 py-2 text-sm",
-                pathname === item.href ? "bg-muted font-medium" : "hover:bg-muted/60",
+                'rounded-md px-3 py-2 text-sm',
+                pathname === item.href ? 'bg-muted font-medium' : 'hover:bg-muted/60'
               )}
             >
               {item.label}
@@ -39,7 +44,7 @@ export function SiteHeader() {
           ))}
         </nav>
         <Button asChild size="sm" className="md:hidden">
-          <Link href="/contact">Contact</Link>
+          <Link href="/contact">{t('contact')}</Link>
         </Button>
       </div>
     </header>

@@ -1,50 +1,50 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
-import { FloatingWhatsApp } from "@/components/floating-whatsapp"
-import { ThemeProvider } from "@/components/theme-provider"
-import "./globals.css"
+import type React from 'react'
+import type { Metadata } from 'next'
+import { Geist, Geist_Mono } from 'next/font/google'
+import { FloatingWhatsApp } from '@/components/floating-whatsapp'
+import { ThemeProvider } from '@/components/theme-provider'
+import './globals.css'
 
 const geistSans = Geist({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-geist-sans",
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-geist-sans',
 })
 
 const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-geist-mono",
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-geist-mono',
 })
 
 export const metadata: Metadata = {
-  title: "Balaji Boundary Walls",
-  description: "100,000+ sq ft installed till now.",
-  metadataBase: new URL("https://example.com"),
+  title: 'Balaji Boundary Walls',
+  description: '100,000+ sq ft installed till now.',
+  metadataBase: new URL('https://example.com'),
   openGraph: {
-    title: "Balaji Boundary Walls",
-    description: "1,00,000 + sq ft.",
-    url: "https://example.com",
-    siteName: "Balaji Boundary Walls",
+    title: 'Balaji Boundary Walls',
+    description: '1,00,000 + sq ft.',
+    url: 'https://example.com',
+    siteName: 'Balaji Boundary Walls',
     images: [
       {
-        url: "/og.png",
+        url: '/og.png',
         width: 1200,
         height: 830,
-        alt: "Balaji Boundary Walls",
+        alt: 'Balaji Boundary Walls',
       },
     ],
-    locale: "en_IN",
-    type: "website",
+    locale: 'en_IN',
+    type: 'website',
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Balaji Boundary Walls",
-    description: "Turnkey RCC & precast boundary wall solutions. Pan-city service.",
-    images: ["/og.png"],
+    card: 'summary_large_image',
+    title: 'Balaji Boundary Walls',
+    description: 'Turnkey RCC & precast boundary wall solutions. Pan-city service.',
+    images: ['/og.png'],
   },
-  icons: { icon: "/favicon.ico" },
-    generator: 'v0.app'
+  icons: { icon: '/favicon.ico' },
+  generator: 'v0.app'
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
