@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Balaji Boundary Walls",
-  description: "Turnkey RCC & precast boundary wall solutions. Pan-city service. 1,00,000+ sq ft installed.",
+  description: "100,000+ sq ft installed till now.",
   metadataBase: new URL("https://example.com"),
   openGraph: {
     title: "Balaji Boundary Walls",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
       {
         url: "/og.png",
         width: 1200,
-        height: 630,
+        height: 830,
         alt: "Balaji Boundary Walls",
       },
     ],
