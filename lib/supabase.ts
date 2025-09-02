@@ -1,12 +1,15 @@
 import { createClient } from '@supabase/supabase-js'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+const supabaseUrl = 'https://lljdtbuhttefkhqxauex.supabase.co'
+const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxsamR0YnVodHRlZmtocXhhdWV4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4MDIwMDYsImV4cCI6MjA3MjM3ODAwNn0.k23Fs40hwtwnE_8vAH9RC85mgnIUyGCf30KMkT4BNkE'
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
-export const createSupabaseClient = () => createClientComponentClient()
+export const createSupabaseClient = () => createClient(supabaseUrl, supabaseAnonKey)
+
+// Server-side client for API routes
+export const createServerSupabaseClient = () => createClient(supabaseUrl, supabaseAnonKey)
 
 export type Database = {
   public: {
