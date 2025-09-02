@@ -8,7 +8,7 @@ import { Label } from '@/components/ui/label'
 import { Switch } from '@/components/ui/switch'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { createSupabaseClient } from '@/lib/supabase'
+import { supabase } from '@/lib/supabaseClient'
 import { useProducts, useCategories } from '@/lib/supabase-hooks'
 import { ImageUpload } from '@/components/image-upload'
 import { useTranslation } from 'react-i18next'
@@ -32,7 +32,6 @@ export function AdminProducts() {
   })
   const [saving, setSaving] = useState(false)
   const { t } = useTranslation()
-  const supabase = createSupabaseClient()
 
   const resetForm = () => {
     setFormData({

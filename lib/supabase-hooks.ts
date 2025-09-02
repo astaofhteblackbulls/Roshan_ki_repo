@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from 'react'
-import { createSupabaseClient } from './supabase'
+import { supabase } from './supabaseClient'
 import type { Database } from './supabase'
 
 type Tables = Database['public']['Tables']
@@ -18,8 +18,6 @@ export function useSupabaseData<T>(
   const [data, setData] = useState<T[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
-
-  const supabase = createSupabaseClient()
 
   const fetchData = async () => {
     try {
@@ -71,8 +69,6 @@ export function useSiteContent() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
-  const supabase = createSupabaseClient()
-
   const fetchData = async () => {
     try {
       setLoading(true)
@@ -101,8 +97,6 @@ export function useSiteContent() {
 }
 
 export async function uploadImage(file: File, path: string) {
-  const supabase = createSupabaseClient()
-  
   const { data, error } = await supabase.storage
     .from('images')
     .upload(path, file, {

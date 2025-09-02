@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { createSupabaseClient } from '@/lib/supabase'
+import { supabase } from '@/lib/supabaseClient'
 import { useSiteContent } from '@/lib/supabase-hooks'
 import { useTranslation } from 'react-i18next'
 
@@ -28,7 +28,6 @@ export function AdminContent() {
   })
   const [saving, setSaving] = useState(false)
   const { t } = useTranslation()
-  const supabase = createSupabaseClient()
 
   useEffect(() => {
     if (content) {
